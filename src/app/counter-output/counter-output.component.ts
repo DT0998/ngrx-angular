@@ -11,7 +11,7 @@ import { Store } from '@ngrx/store';
 export class CounterOutputComponent {
   count$: Observable<number>;
 
-  constructor(private store: Store<{ counter: number }>) {
-    this.count$ = store.select('counter');
+  constructor(private store: Store<{ count: number }>) {
+    this.count$ = this.store.select('count');
   }
 }
