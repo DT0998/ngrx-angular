@@ -6,6 +6,8 @@ import { CounterOutputComponent } from './counter-output/counter-output.componen
 import { CounterControlsComponent } from './counter-controls/counter-controls.component';
 import { StoreModule } from '@ngrx/store';
 import reducers from './store/store.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { CountEffects } from './store/count/count.effects';
 
 @NgModule({
   declarations: [
@@ -13,7 +15,11 @@ import reducers from './store/store.reducer';
     CounterOutputComponent,
     CounterControlsComponent,
   ],
-  imports: [BrowserModule, StoreModule.forRoot(reducers)],
+  imports: [
+    BrowserModule,
+    StoreModule.forRoot(reducers),
+    EffectsModule.forRoot([CountEffects]),
+  ],
   providers: [],
   bootstrap: [AppComponent],
 })
