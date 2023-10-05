@@ -5,8 +5,8 @@ import { AppComponent } from './app.component';
 import { CounterOutputComponent } from './counter-output/counter-output.component';
 import { CounterControlsComponent } from './counter-controls/counter-controls.component';
 import { StoreModule } from '@ngrx/store';
-import reducers from './store/store.reducer';
 import { EffectsModule } from '@ngrx/effects';
+import * as fromApp from './app/store/store.reducer';
 import { CountEffects } from './store/count/count.effects';
 
 @NgModule({
@@ -17,7 +17,7 @@ import { CountEffects } from './store/count/count.effects';
   ],
   imports: [
     BrowserModule,
-    StoreModule.forRoot(reducers),
+    StoreModule.forRoot(fromApp.appReducer),
     EffectsModule.forRoot([CountEffects]),
   ],
   providers: [],
