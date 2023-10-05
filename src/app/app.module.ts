@@ -6,7 +6,7 @@ import { CounterOutputComponent } from './counter-output/counter-output.componen
 import { CounterControlsComponent } from './counter-controls/counter-controls.component';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
-import * as fromApp from './app/store/store.reducer';
+import * as fromApp from './store/store.reducer';
 import { CountEffects } from './store/count/count.effects';
 
 @NgModule({
